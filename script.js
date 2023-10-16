@@ -24,6 +24,8 @@ start.addEventListener('click', () => {
 
 topicBtn.addEventListener('click', () => {
     navigator.clipboard.writeText(Object.keys(name_counts).join("\n"));
+    topicBtn.textContent = "Copied!"
+
     // console.log(Object.keys(name_counts).join("\n"))
 })
 
@@ -31,6 +33,8 @@ numBtn.addEventListener('click', () => {
     navigator.clipboard.writeText(Object.keys(name_counts).map(function (keys) {
         return name_counts[keys]
     }).join("\n"));
+    numBtn.textContent = "Copied!"
+
     // console.log(Object.keys(name_counts).map(function (keys) {
     //     return name_counts[keys]
     // }).join("\n"))

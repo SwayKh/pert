@@ -63,12 +63,12 @@ textarea {
 }
 
 .table {
-    font-size: 12px;
+    font-size: 10px;
     color: #F9FAF8;
-    background-color: #1F2937;
+    /* background-color: #1F2937; */
     padding: 30px;
-    border-radius: 10px;
-    border: #3882F6 solid 5px;
+    /* border-radius: 10px; */
+    /* border: #3882F6 solid 5px; */
 }
 
 .footer {

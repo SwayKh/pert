@@ -1,3 +1,9 @@
+const tableArea = document.querySelector('.table-area')
+const input = document.querySelector('.input')
+const start = document.querySelector('.start')
+const topicBtn = document.querySelector('.copy-topic-btn')
+const numBtn = document.querySelector('copy-num-btn')
+
 
 // # Create a dictionary to store the counts
 // name_counts = {}

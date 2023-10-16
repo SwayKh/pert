@@ -55,8 +55,9 @@ button {
     padding: 5px 10px;
 }
 
-input {
+textarea {
     flex: auto;
+    white-space: pre-wrap;
 }
 
 .footer {

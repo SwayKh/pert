@@ -6,7 +6,7 @@ const numBtn = document.querySelector('copy-num-btn')
 
 
 // # Create a dictionary to store the counts
-// name_counts = {}
+name_counts = {}
 
 // # Read names from the input file
 // with open('TopicsEntry.txt', 'r') as file:

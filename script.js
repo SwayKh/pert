@@ -2,10 +2,8 @@ const tableArea = document.querySelector('.table-area')
 const textArea = document.querySelector('textarea')
 const start = document.querySelector('.start')
 const topicBtn = document.querySelector('.copy-topic-btn')
-const numBtn = document.querySelector('copy-num-btn')
+const numBtn = document.querySelector('.copy-num-btn')
 
-
-// # Create a dictionary to store the counts
 
 let name_counts = {}
 
@@ -18,13 +16,28 @@ start.addEventListener('click', () => {
             name_counts[element] = 1
         }
     });
-    console.log(name_counts)
+    // console.log(name_counts)
 
-    // Get the container element and append the table
     const tableElement = objectToTable(name_counts);
     tableArea.appendChild(tableElement);
 })
 
+topicBtn.addEventListener('click', () => {
+    navigator.clipboard.writeText(Object.keys(name_counts).join("\n"));
+    // console.log(Object.keys(name_counts).join("\n"))
+})
+
+numBtn.addEventListener('click', () => {
+    navigator.clipboard.writeText(Object.keys(name_counts).map(function (keys) {
+        return name_counts[keys]
+    }).join("\n"));
+    // console.log(Object.keys(name_counts).map(function (keys) {
+    //     return name_counts[keys]
+    // }).join("\n"))
+})
+
+
+// OKAY, This function was copied from GPT, my bad
 function objectToTable(data) {
     const table = document.createElement('table');
     table.className = "table"

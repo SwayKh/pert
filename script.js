@@ -34,8 +34,6 @@ start.addEventListener('click', () => {
     const tableElement = objectToTable(name_counts);
     tableArea.appendChild(tableElement);
     textArea.value = ''
-    inputArray = []
-    name_counts = {}
     console.log("input array after reseting it" + inputArray)
 
     if (copyBar.style.opacity == 0) {

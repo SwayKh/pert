@@ -45,12 +45,16 @@ body {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    gap: 25px;
+    gap: 10px;
+}
+
+.copy-bar {
+    opacity: 0;
 }
 
 
 button {
-    font-size: 16px;
+    font-size: 14px;
     color: #F9FAF8;
     background-color: #3882F6;
     border: 0;

@@ -2,6 +2,7 @@ const tableArea = document.querySelector('.table-area')
 const textArea = document.querySelector('textarea')
 const start = document.querySelector('.start')
 const clear = document.querySelector('.clear')
+const copyBar = document.querySelector('.copy-bar')
 const topicBtn = document.querySelector('.copy-topic-btn')
 const numBtn = document.querySelector('.copy-num-btn')
 
@@ -10,9 +11,16 @@ let name_counts = {}
 
 start.addEventListener('click', () => {
     let inputArray = textArea.value.split('\n')
+
+    // console.log("Text area value: \n" + textArea.value + " length: " + textArea.value.length)
+    // console.log("input array made from text area value: " + inputArray + " length: " + inputArray.length)
+
+    if (inputArray.includes("")) {
+        inputArray.splice(inputArray.indexOf(""), 1)
+    }
     for (var i = 0; i < inputArray.length; i++) {
-        inputArray[i] = inputArray[i].toLowerCase()
         inputArray[i] = inputArray[i].replace(/^\s+|\s+$/g, '');
+        inputArray[i] = inputArray[i].toLowerCase()
     }
     inputArray.forEach(element => {
         if (element in name_counts) {
@@ -21,16 +29,25 @@ start.addEventListener('click', () => {
             name_counts[element] = 1
         }
     });
-    // console.log(name_counts)
+
 
     const tableElement = objectToTable(name_counts);
     tableArea.appendChild(tableElement);
+    textArea.value = ''
+    inputArray = []
+    name_counts = {}
+    console.log("input array after reseting it" + inputArray)
+
+    if (copyBar.style.opacity == 0) {
+        copyBar.style.opacity = 100
+    }
 })
 
 clear.addEventListener('click', (e) => {
     textArea.value = ''
     console.log("Clear button pressed")
     const tableExists = document.querySelector('.table')
+    copyBar.style.opacity = 0
     if (tableExists) {
         console.log("Table exists, now removed")
         tableExists.parentNode.removeChild(tableExists)

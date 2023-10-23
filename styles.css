@@ -6,7 +6,6 @@ body {
     height: 100dvh;
     display: flex;
     flex-direction: column;
-    /* overflow-y: hidden; */
 }
 
 .outside-box {
@@ -49,7 +48,9 @@ body {
     gap: 25px;
 }
 
+
 button {
+    font-size: 16px;
     color: #F9FAF8;
     background-color: #3882F6;
     border: 0;
@@ -65,10 +66,7 @@ textarea {
 .table {
     font-size: 10px;
     color: #F9FAF8;
-    /* background-color: #1F2937; */
     padding: 30px;
-    /* border-radius: 10px; */
-    /* border: #3882F6 solid 5px; */
 }
 
 .footer {
